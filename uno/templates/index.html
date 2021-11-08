@@ -1,0 +1,60 @@
+{% block header %}
+  <h1>{% block title %}Welcome to Uno Helper!{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="number">How many players? </label>
+    <select name="number" id="number">
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+    </select>
+    <br></br>
+
+    <label for="mode">Please select a mode: </label>
+    <select name="mode" id="mode" required>
+      <option value="Classic">Classic</option>
+      <option value="Wild">Wild</option>
+    </select> 
+    <br></br>
+
+    <label>Use 0 and 7 for swap?</label>
+    <input type="checkbox" id="swap" name="swap">
+    <br><br>
+
+    <label>Enable force play?</label>
+    <input type="checkbox" id="force" name="force">
+    <br><br>
+
+    <input type="submit" value="Let's play!">
+  </form>
+{% endblock %}
+
+<!-- <!doctype html>
+<title>Uno Helper</title>
+<h1>Welcome to Uno Helper!</h1>
+<body>
+  <label for="number">How many players?</label>
+  <select name="number" id="number">
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+  </select>
+  <br><br>
+
+  <label>Please select a mode:</label>
+  <select name="mode" id="mode">
+    <option value=1>Classic</option>
+    <option value=2>Wild</option>
+  </select>  
+  <br><br>
+
+  <label>0 and 7 swap?</label>
+  <input type="checkbox" id="swap" name="swap">
+  <br><br>
+
+  <button type="submit">Let's go!</button>
+  <br><br>
+</body> -->

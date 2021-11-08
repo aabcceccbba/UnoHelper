@@ -1,31 +1,58 @@
-import os
+from flask import (
+    Flask, render_template, request, redirect, url_for
+)
 
-from flask import Flask
+app = Flask(__name__)
 
-def create_app(test_config=None):
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'uno.sqlite'),
-    )
+@app.route("/", methods=('GET', 'POST'))
+def main():
+    if request.method == 'POST':
+        number = request.form['number']
+        mode = request.form['mode']
+        swap = 'swap' in request.form
+        force = 'force' in request.form
+        print("=======================================+++++++++++++========================")
+        print(number)
+        print(mode)
+        print(swap)
+        print(force)
+        print("=======================================+++++++++++++========================")
+        return redirect(url_for("test", mode=mode))
+    return render_template("index.html")
 
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
-    else:
-        # load the test config if passed in
-        app.config.from_mapping(test_config)
+@app.route('/<mode>')
+def test(mode=None):  
+    return render_template('hello.html', mode=mode)
 
-    # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+# import os
 
-    return app
+# from flask import Flask
+
+# def create_app(test_config=None):
+#     # create and configure the app
+#     app = Flask(__name__, instance_relative_config=True)
+#     app.config.from_mapping(
+#         SECRET_KEY='dev',
+#         DATABASE=os.path.join(app.instance_path, 'uno.sqlite'),
+#     )
+
+#     if test_config is None:
+#         # load the instance config, if it exists, when not testing
+#         app.config.from_pyfile('config.py', silent=True)
+#     else:
+#         # load the test config if passed in
+#         app.config.from_mapping(test_config)
+
+#     # ensure the instance folder exists
+#     try:
+#         os.makedirs(app.instance_path)
+#     except OSError:
+#         pass
+
+#     # a simple page that says hello
+#     @app.route('/hello')
+#     def hello():
+#         return 'Hello, World!'
+
+#     return app
