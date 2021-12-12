@@ -1,0 +1,134 @@
+{% block header %}
+  <h1>{% block title %}UNO Helper {{ mode }} Mode {% endblock %}</h1>
+  <title>UNO Helper {{ mode }} Mode</title>
+{% endblock %}
+
+<!-- {% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %} -->
+
+{% block content %}
+  <form method="post">
+    <label for="color1">Which color?</label>
+    <select name="color1" id="color1">
+      <option value="red">red</option>
+      <option value="yellow">yellow</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+      <option value="black">black (special)</option>
+    </select>
+
+    <label for="pattern1">Which pattern?</label>
+    <select name="pattern1" id="pattern1">
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>      
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>      
+      <option value=8>8</option>
+      <option value=9>9</option>
+      <option value="+2">+2</option>
+      <option value="reverse">reverse</option>
+      <option value="skip">skip</option>
+      <option value="wild">wild</option>
+      <option value="+4">+4</option>
+    </select>
+    <br></br>
+
+    <label for="color2">Which color?</label>
+    <select name="color2" id="color2">
+      <option value="red">red</option>
+      <option value="yellow">yellow</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+      <option value="black">black (special)</option>
+    </select>
+
+    <label for="pattern2">Which pattern?</label>
+    <select name="pattern2" id="pattern2">
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>      
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>      
+      <option value=8>8</option>
+      <option value=9>9</option>
+      <option value="+2">+2</option>
+      <option value="reverse">reverse</option>
+      <option value="skip">skip</option>
+      <option value="wild">wild</option>
+      <option value="+4">+4</option>
+    </select>
+    <br></br>    
+
+    <label for="color3">Which color?</label>
+    <select name="color3" id="color3">
+      <option value="red">red</option>
+      <option value="yellow">yellow</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+      <option value="black">black (special)</option>
+    </select>
+
+    <label for="pattern3">Which pattern?</label>
+    <select name="pattern3" id="pattern3">
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>      
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>      
+      <option value=8>8</option>
+      <option value=9>9</option>
+      <option value="+2">+2</option>
+      <option value="reverse">reverse</option>
+      <option value="skip">skip</option>
+      <option value="wild">wild</option>
+      <option value="+4">+4</option>
+    </select>
+    <br></br>
+
+    <label for="color4">Which color?</label>
+    <select name="color4" id="color4">
+      <option value="red">red</option>
+      <option value="yellow">yellow</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+      <option value="black">black (special)</option>
+    </select>
+
+    <label for="pattern4">Which pattern?</label>
+    <select name="pattern4" id="pattern4">
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>      
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>      
+      <option value=8>8</option>
+      <option value=9>9</option>
+      <option value="+2">+2</option>
+      <option value="reverse">reverse</option>
+      <option value="skip">skip</option>
+      <option value="wild">wild</option>
+      <option value="+4">+4</option>
+    </select>
+    <br></br>
+
+    <input type="submit" value="Next">
+    <br></br>
+    <input type="submit" value="End Helper">
+  </form>
+{% endblock %}

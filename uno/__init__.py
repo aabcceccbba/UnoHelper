@@ -17,12 +17,14 @@ def main():
         print(swap)
         print(force)
         print("=======================================+++++++++++++========================")
-        return redirect(url_for("test", mode=mode))
+        return redirect(url_for("game", mode=mode))
     return render_template("index.html")
 
 @app.route('/<mode>')
-def test(mode=None):  
-    return render_template('hello.html', mode=mode)
+def game(mode=None):
+    if request.method == 'POST':
+        print('POST')
+    return render_template('game.html', mode=mode)
 
 
 # import os
