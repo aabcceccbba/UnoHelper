@@ -7,12 +7,12 @@ app = Flask(__name__)
 @app.route("/", methods=('GET', 'POST'))
 def main():
     if request.method == 'POST':
-        number = request.form['number']
+        # number = request.form['number']
         mode = request.form['mode']
         swap = 'swap' in request.form
         force = 'force' in request.form
         print("=======================================+++++++++++++========================")
-        print(number)
+        # print(number)
         print(mode)
         print(swap)
         print(force)
@@ -20,11 +20,30 @@ def main():
         return redirect(url_for("game", mode=mode))
     return render_template("index.html")
 
-@app.route('/<mode>')
+@app.route('/<mode>', methods=('GET', 'POST'))
 def game(mode=None):
     if request.method == 'POST':
-        print('POST')
+        if request.form['button'] == 'Next':
+            next()
+        elif request.form['button'] == 'End Helper':
+            end()
+        # button = request.form['name']
+        # if button == "next":
+        #     print('POST for next')
+        #     pass
+        # elif button == "end":
+        #     print('POST for end')
+        #     pass
+        # return "hello world"
     return render_template('game.html', mode=mode)
+
+def next():
+    print('Next')
+
+def end():
+    print('End helper')
+
+# @app.route('/game')
 
 
 # import os
